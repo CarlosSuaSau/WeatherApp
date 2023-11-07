@@ -10,4 +10,13 @@ public class Weather {
     private Instant ts;
     private Location location;
 
+    public Weather(float temp, int pressure, int humidity, float wind, Instant ts, Location location) {
+        this.temp = temp;
+        this.pressure = pressure;
+        this.humidity = humidity;
+        this.wind = wind;
+        this.ts = ts;
+        this.location = location;
+    }
+
 }

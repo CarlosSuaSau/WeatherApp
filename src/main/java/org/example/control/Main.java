@@ -1,7 +1,8 @@
 package org.example.control;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
+    OpenWeatherMap tiempo = new OpenWeatherMap();
+    Sql database = new Sql();
+
+    WeatherController control = new WeatherController(tiempo, database, locations);
 }
