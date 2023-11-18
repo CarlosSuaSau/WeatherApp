@@ -60,6 +60,6 @@ public class Weather {
                 ", windSpeed=" + windSpeed +
                 ", instant=" + instant +
                 ", location=" + location.getLatitude() + " " + location.getLongitude() +
-                '}';
+                ", island=" + location.getIsland();
     }
 }

@@ -54,16 +54,12 @@ public class SQLiteWeatherStore implements WeatherStore{
 
     private void clearTable(String tableName) {
         try {
-            // Create a DELETE statement to remove all rows from the table
             String deleteQuery = "DELETE FROM " + tableName;
 
-            // Use a PreparedStatement to execute the DELETE statement
             PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
 
-            // Execute the DELETE statement
             preparedStatement.executeUpdate();
 
-            // Close the PreparedStatement
             preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -9,6 +9,5 @@ public interface WeatherStore extends AutoCloseable {
 
     @Override
     default void close() throws Exception {
-
     }
 }

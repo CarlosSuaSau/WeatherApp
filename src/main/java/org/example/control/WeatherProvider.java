@@ -3,7 +3,6 @@ package org.example.control;
 import org.example.model.Location;
 import org.example.model.Weather;
 
-import java.time.Instant;
 import java.util.List;
 
 public interface WeatherProvider {
