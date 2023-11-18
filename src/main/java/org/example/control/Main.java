@@ -16,6 +16,5 @@ public class Main {
 
         WeatherController controller = new WeatherController(myStore, provider);
         controller.runTask();
-
     }
 }
