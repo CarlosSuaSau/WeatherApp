@@ -1,9 +1,9 @@
 package org.example.model;
 
 public class Location {
-    private double latitude;
-    private double longitude;
-    private String island;
+    private final double latitude;
+    private final double longitude;
+    private final String island;
 
     public Location(double latitude, double longitude, String island) {
         this.latitude = latitude;
@@ -15,23 +15,14 @@ public class Location {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
 
     public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
 
     public String getIsland() {
         return island;
     }
 
-    public void setIsland(String island) {
-        this.island = island;
-    }
 }

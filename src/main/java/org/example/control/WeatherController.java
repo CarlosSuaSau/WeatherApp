@@ -18,13 +18,6 @@ public class WeatherController {
         this.provider = provider;
     }
 
-    public WeatherProvider getProvider() {
-        return provider;
-    }
-
-    public WeatherStore getStore() {
-        return store;
-    }
 
     public void runTask() throws IOException {
         Task();
@@ -35,7 +28,7 @@ public class WeatherController {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                System.out.println("Realizando la tarea...");
+                System.out.println("Doing the task...");
                 Location granCanaria = new Location(28.139421644403107, -15.629770604586072, "Gran Canaria");
                 Location tenerife = new Location(28.417265111220242, -16.545093079171146, "Tenerife");
                 Location lanzarote = new Location( 29.014819077666854, -13.50023776954011, "Lanzarote");
@@ -64,11 +57,11 @@ public class WeatherController {
                 predictions.add(predictionsEH);
                 predictions.add(predictionsLGr);
 
-                for (int i=0; i < predictions.size(); i++){
-                    for (int j=0; j < predictions.get(i).size(); j++){
-                        System.out.println(predictions.get(i).get(j).toString());
+                for (List<Weather> prediction : predictions) {
+                    for (Weather weather : prediction) {
+                        System.out.println(weather.toString());
                     }
-                    System.out.println("");
+                    System.out.println();
                 }
 
                 store.save(predictionsGC, "GranCanaria");
@@ -80,7 +73,7 @@ public class WeatherController {
                 store.save(predictionsEH, "ElHierro");
                 store.save(predictionsLGr, "LaGraciosa");
 
-                System.out.println("Tabla de datos actualizada");
+                System.out.println("The database has been updated");
 
                 try {
                     Thread.sleep(3600 * 1000 * 6);
