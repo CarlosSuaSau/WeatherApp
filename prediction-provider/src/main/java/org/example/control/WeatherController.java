@@ -69,7 +69,7 @@ public class WeatherController {
 
 
 
-                System.out.println("The database has been updated");
+                System.out.println("The messages have been sent.");
 
                 try {
                     Thread.sleep(10 * 1000 * 6);
