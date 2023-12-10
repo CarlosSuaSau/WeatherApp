@@ -4,10 +4,7 @@ import org.example.model.Weather;
 
 import java.util.List;
 
-public interface WeatherStore extends AutoCloseable {
+public interface WeatherStore  {
     void save(Weather weather);
 
-    @Override
-    default void close() throws Exception {
-    }
 }

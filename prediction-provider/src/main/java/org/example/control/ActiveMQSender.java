@@ -1,7 +1,7 @@
 package org.example.control;
 
 import com.google.gson.Gson;
-import jakarta.jms.*;
+import javax.jms.*;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.example.model.Weather;
@@ -43,8 +43,4 @@ public class ActiveMQSender implements WeatherStore {
         return jsonString;
     }
 
-    @Override
-    public void close() throws Exception {
-        WeatherStore.super.close();
-    }
 }

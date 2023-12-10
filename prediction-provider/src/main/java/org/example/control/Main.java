@@ -14,7 +14,7 @@ public class Main {
 
         OpenWeatherMap myProvider = new OpenWeatherMap(password);
 
-        ActiveMQSender mySender = new ActiveMQSender("topic:prediction.Weather", ActiveMQConnection.DEFAULT_BROKER_URL);
+        ActiveMQSender mySender = new ActiveMQSender("topic:prediction.Weather", "tcp://localhost:61616");
 
         WeatherController controller = new WeatherController(mySender, myProvider);
         controller.runTask();

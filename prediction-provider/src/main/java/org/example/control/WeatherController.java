@@ -64,11 +64,18 @@ public class WeatherController {
                     System.out.println();
                 }
 
+                store.save(predictionsGC.get(0));
+                store.save(predictionsGC.get(1));
+                store.save(predictionsGC.get(2));
+                store.save(predictionsGC.get(3));
+                store.save(predictionsGC.get(4));
+                /*
                 for (List<Weather> prediction : predictions) {
                     for (Weather weather : prediction) {
                         store.save(weather);
                     }
                 }
+                */
 
 
                 /*
