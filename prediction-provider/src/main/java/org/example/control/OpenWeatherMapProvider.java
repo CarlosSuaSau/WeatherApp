@@ -24,8 +24,8 @@ public class OpenWeatherMapProvider implements WeatherProvider{
     public List<Weather> getWeather(Location location) {
         try{
             String url = "https://api.openweathermap.org/data/2.5/forecast?" +
-                    "lat=" + String.valueOf(location.getLatitude()) +
-                    "&lon=" + String.valueOf(location.getLongitude()) +
+                    "lat=" + location.getLatitude() +
+                    "&lon=" + location.getLongitude() +
                     "&appid=" + password;
 
             Document doc = Jsoup.connect(url).ignoreContentType(true).get();

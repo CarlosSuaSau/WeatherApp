@@ -2,15 +2,14 @@ package org.example.control;
 
 import com.google.gson.Gson;
 import javax.jms.*;
-import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.example.model.Weather;
 
 
 
 public class ActiveMQSender implements WeatherStore {
-    private final String subject; /*= "topic:prediction.Weather"*/
-    private final String url; /*ActiveMQConnection.DEFAULT_BROKER_URL*/
+    private final String subject;
+    private final String url;
 
     public ActiveMQSender(String subject, String url){
         this.subject = subject;
