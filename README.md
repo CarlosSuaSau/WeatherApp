@@ -6,7 +6,8 @@
 
 ## Functionality
 This program uses data provided by an API to obtain the weather forecast for 12pm of the following 5 days, in the 8 Canary Islands.
-The data obtained is saved and stored in a database. The information of the database is updated every 6 hours.
+The data obtained is sended to an ActiveMQ broker. The information of the broker is updated every 6 hours.
+The program also contains a module to read the messages in the broker and write the information in a .events file.
 
 ## Resources
 The program was entirely written in IntelliJ Idea, by Jet Brains.
@@ -24,13 +25,15 @@ It asks for an api key when executed. In case the key introduced is right, it wi
 and finally, run the controller task. 
 
 The task will run once the program is executed, and then 6 hours after execution starts. 
-The controller task creates the location object of each island, then calls the WeatherProvider to obtain the weather list for each island. 
-All island list are added to another list to print each of the forecasts.
-At the end, the database is updated with the forecast of each island for the next 5 days. Each island has its own Table.
+The controller task creates the location object of each island, then calls the WeatherProvider to obtain the weather list for each island.
+Then, the information of the Weather objects created is sent as a Json String to the ActiveMQ broker.
+
+The event store builder has the purpose of receiving the messages of the broker as a suscriptor, and create the files where the Json messages are written.
+The files are named after the date of their time stamp.
 
 
 
 
-![WeatherApp UML](https://github.com/CarlosSuaSau/WeatherApp/assets/145434580/5162e83f-e790-45b2-bb59-c45ea57e36b7)
+
 
 
