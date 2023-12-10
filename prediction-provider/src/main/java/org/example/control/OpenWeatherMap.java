@@ -66,9 +66,11 @@ public class OpenWeatherMap implements WeatherProvider{
         Double windSpeed = windData.get("speed").getAsDouble();
         JsonObject rainData = jsonData.getAsJsonObject("rain");
         Double pop = (rainData != null && rainData.has("3h")) ? rainData.get("3h").getAsDouble() : 0.0;
-        Instant dt = Instant.ofEpochSecond(jsonData.get("dt").getAsLong());
+        String dt = String.valueOf(Instant.ofEpochSecond(jsonData.get("dt").getAsLong()));
+        String ts = String.valueOf(Instant.now());
+        String ss = "OpenWeatherMap";
 
-        Weather weather = new Weather(temp, humidity, cloudiness, windSpeed, pop, dt, location);
+        Weather weather = new Weather(temp, humidity, cloudiness, windSpeed, pop, dt, location, ts, ss);
         return weather;
     }
     private boolean isMidday(JsonObject data) {

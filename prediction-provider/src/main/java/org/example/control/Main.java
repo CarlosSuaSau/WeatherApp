@@ -1,5 +1,7 @@
 package org.example.control;
 
+import org.apache.activemq.ActiveMQConnection;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,11 +12,11 @@ public class Main {
         System.out.println("Introduce a valid apikey:");
         String password = scanner.nextLine();
 
-        OpenWeatherMap provider = new OpenWeatherMap(password);
+        OpenWeatherMap myProvider = new OpenWeatherMap(password);
 
-        SQLiteWeatherStore myStore = new SQLiteWeatherStore();
+        ActiveMQSender mySender = new ActiveMQSender("topic:prediction.Weather", ActiveMQConnection.DEFAULT_BROKER_URL);
 
-        WeatherController controller = new WeatherController(myStore, provider);
+        WeatherController controller = new WeatherController(mySender, myProvider);
         controller.runTask();
     }
 }

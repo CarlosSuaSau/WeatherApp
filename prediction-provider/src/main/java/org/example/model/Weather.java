@@ -9,10 +9,12 @@ public class Weather {
     private final int cloudiness;
     private final double windSpeed;
     private final double pop;
-    private final Instant instant;
+    private final String instant;
     private final Location location;
+    private final String ts;
+    private final String ss;
 
-    public Weather(double temp, int humidity, int cloudiness, double windSpeed, double pop, Instant instant, Location location){
+    public Weather(double temp, int humidity, int cloudiness, double windSpeed, double pop, String instant, Location location, String ts, String ss){
         this.temp = temp;
         this.pop = pop;
         this.humidity = humidity;
@@ -20,6 +22,9 @@ public class Weather {
         this.windSpeed = windSpeed;
         this.instant = instant;
         this.location = location;
+        this.ts = ts;
+        this.ss = ss;
+
     }
 
     public double getTemp() {
@@ -42,24 +47,28 @@ public class Weather {
         return pop;
     }
 
-    public Instant getInstant() {
+    public String getInstant() {
         return instant;
     }
 
     public Location getLocation() {
         return location;
     }
+    public String getTs(){ return ts; }
+    public String getSs() { return ss; }
 
     @Override
     public String toString() {
         return "Weather{" +
                 "temp=" + temp +
                 ", humidity=" + humidity +
-                ", pop=" + pop +
                 ", cloudiness=" + cloudiness +
                 ", windSpeed=" + windSpeed +
-                ", instant=" + instant +
-                ", location=" + location.getLatitude() + " " + location.getLongitude() +
-                ", island=" + location.getIsland();
+                ", pop=" + pop +
+                ", instant='" + instant + '\'' +
+                ", location=" + location +
+                ", ts='" + ts + '\'' +
+                ", ss='" + ss + '\'' +
+                '}';
     }
 }

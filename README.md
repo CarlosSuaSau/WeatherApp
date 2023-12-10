@@ -32,3 +32,5 @@ At the end, the database is updated with the forecast of each island for the nex
 
 
 ![WeatherApp UML](https://github.com/CarlosSuaSau/WeatherApp/assets/145434580/5162e83f-e790-45b2-bb59-c45ea57e36b7)
+
+

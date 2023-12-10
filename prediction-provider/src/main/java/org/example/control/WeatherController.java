@@ -64,6 +64,14 @@ public class WeatherController {
                     System.out.println();
                 }
 
+                for (List<Weather> prediction : predictions) {
+                    for (Weather weather : prediction) {
+                        store.save(weather);
+                    }
+                }
+
+
+                /*
                 store.save(predictionsGC, "GranCanaria");
                 store.save(predictionsTNF, "Tenerife");
                 store.save(predictionsLNZ, "Lanzarote");
@@ -72,17 +80,18 @@ public class WeatherController {
                 store.save(predictionsLG, "LaGomera");
                 store.save(predictionsEH, "ElHierro");
                 store.save(predictionsLGr, "LaGraciosa");
+                */
 
                 System.out.println("The database has been updated");
 
                 try {
-                    Thread.sleep(3600 * 1000 * 6);
+                    Thread.sleep(10 * 1000 * 6);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         };
 
-        timer.schedule(task, 0, 3600 * 1000 * 6);
+        timer.schedule(task, 0, 10 * 1000 * 6);
     }
 }
