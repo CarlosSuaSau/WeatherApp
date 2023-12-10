@@ -6,7 +6,6 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import org.example.model.Weather;
 
 
-
 public class ActiveMQSender implements WeatherStore {
     private final String subject;
     private final String url;
