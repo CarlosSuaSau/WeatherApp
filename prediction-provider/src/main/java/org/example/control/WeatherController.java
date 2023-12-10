@@ -59,35 +59,15 @@ public class WeatherController {
 
                 for (List<Weather> prediction : predictions) {
                     for (Weather weather : prediction) {
+                        store.save(weather);
                         System.out.println(weather.toString());
                     }
                     System.out.println();
                 }
 
-                store.save(predictionsGC.get(0));
-                store.save(predictionsGC.get(1));
-                store.save(predictionsGC.get(2));
-                store.save(predictionsGC.get(3));
-                store.save(predictionsGC.get(4));
-                /*
-                for (List<Weather> prediction : predictions) {
-                    for (Weather weather : prediction) {
-                        store.save(weather);
-                    }
-                }
-                */
 
 
-                /*
-                store.save(predictionsGC, "GranCanaria");
-                store.save(predictionsTNF, "Tenerife");
-                store.save(predictionsLNZ, "Lanzarote");
-                store.save(predictionsFTV, "Fuerteventura");
-                store.save(predictionsLP, "LaPalma");
-                store.save(predictionsLG, "LaGomera");
-                store.save(predictionsEH, "ElHierro");
-                store.save(predictionsLGr, "LaGraciosa");
-                */
+
 
                 System.out.println("The database has been updated");
 

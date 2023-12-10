@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Introduce a valid apikey:");
         String password = scanner.nextLine();
 
-        OpenWeatherMap myProvider = new OpenWeatherMap(password);
+        OpenWeatherMapProvider myProvider = new OpenWeatherMapProvider(password);
 
         ActiveMQSender mySender = new ActiveMQSender("topic:prediction.Weather", "tcp://localhost:61616");
 

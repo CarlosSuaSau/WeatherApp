@@ -13,10 +13,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;;
 
-public class OpenWeatherMap implements WeatherProvider{
+public class OpenWeatherMapProvider implements WeatherProvider{
 
     private String password;
-    public OpenWeatherMap(String password){
+    public OpenWeatherMapProvider(String password){
         this.password = password;
     }
 
